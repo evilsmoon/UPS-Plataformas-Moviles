@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title> Historial </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      *ngFor="let registro of dataLocal.guardados"
+
+      detail
+    >
+      <ion-icon slot="start"  color="primary"></ion-icon>
+      <ion-label>
+        <h2>{{ registro.codigo }}</h2>
+        <p>{{ registro.razon  }}</p>
+        <p>{{ registro.nombre  }}</p>
+        <p>{{ registro.lat  }} - {{ registro.lat  }}</p>
+        <p>{{ registro.created | date: 'medium' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!-- (click)="openRegister( registro )" -->

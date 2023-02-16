@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>history</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/"
+      text=" "
+      class="boton-regresar"
+      icon="close-circle"
+  ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item
+      *ngFor="let coord of datalocal.history"  
+      detail="false"
+    >
+      <ion-icon slot="end"  [name]="coord.icon"  color="primary"></ion-icon>
+      <ion-label>
+        <h1>Latitud: {{ coord.lat  }}</h1>
+        <h1>Longitud:{{ coord.lon  }}</h1>
+        <br/>
+        <p>{{ coord.created| date: 'medium' }}</p>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      Productos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+  <ion-list>
+
+    <ion-item *ngFor="let producto of dataLocal.guardados"
+              (click)="abrirProducto( producto   )"
+              detail>
+         <ion-icon slot="start" name="newspaper-outline" color="primary"></ion-icon>
+      <ion-label>
+        <h2>{{ producto.nombre }}</h2>
+        <p>{{ producto.marca }}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+
+
+</ion-content>

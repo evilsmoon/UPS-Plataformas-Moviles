@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-title>Inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="open()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let producto of productos">
+    <ion-card>
+      <img alt="Silhouette of mountains" [src]="producto.imagen" />
+      <ion-card-header>
+        <ion-card-title>Producto : {{producto.nombre}}</ion-card-title>
+        <ion-card-subtitle>Stock : {{producto.stock}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae cum incidunt et porro architecto quidem enim sapiente tempore perferendis dolores fuga, possimus, provident error. Cumque natus quasi esse modi quaerat.
+      </ion-card-content>
+      <ion-button fill="clear">Comprar: ${{producto.precio}}</ion-button>
+    </ion-card>
+  </ion-list>
+</ion-content>

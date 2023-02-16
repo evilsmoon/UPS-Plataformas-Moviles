@@ -1,0 +1,7 @@
+{
+  "name": "sqlite-firebase",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

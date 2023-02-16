@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>PERFIL</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="open()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input
+          [(ngModel)]="user.nombre"
+          type="text"
+          placeholder="Ingrese su nombre"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input
+          [(ngModel)]="user.email"
+          type="email"
+          placeholder="Ingrese su email"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Password:</ion-label>
+        <ion-input
+          [(ngModel)]="user.password"
+          type="password"
+          placeholder="Ingrese su password"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <ion-input (change)="uploadImage($event)"  type="file" placeholder="Ingrese el Descuento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-img [src]="imagen"></ion-img>
+      </ion-item>
+
+      <ion-item>
+        <ion-button
+          (click)="registrar()"
+          expand="block"
+          fill="clear"
+          shape="round"
+        >
+          Click me
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

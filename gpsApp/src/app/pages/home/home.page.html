@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>GPS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="gps()" expand="block" shape="round">gps</ion-button>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">USER</ion-label>
+      <ion-input [(ngModel)]="username" type="text" placeholder="Ingrese su usurio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">PASSWORD</ion-label>
+      <ion-input [(ngModel)]="password" type="text" placeholder="Ingrese su usurio"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="credencial()" expand="block" fill="clear" shape="round">
+        Click me
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button [routerLink]="['/history']" routerLinkActive="router-link-active"  expand="block" shape="round"
+      >history</ion-button
+    >
+  </ion-toolbar>
+</ion-footer>

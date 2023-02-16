@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card padding>
+    <ion-item>
+      <ion-label>Cambiar Contraseña</ion-label> 
+  </ion-item>
+
+  <ion-item>
+      <ion-label position="floating"> Contraseña </ion-label>
+      <ion-input [(ngModel)]="password" type="password" name="password"></ion-input>
+  </ion-item>
+ 
+  <ion-button (click)="validarPassword()" padding expand="block"> Entrar </ion-button>
+
+
+  </ion-card>
+
+</ion-content>

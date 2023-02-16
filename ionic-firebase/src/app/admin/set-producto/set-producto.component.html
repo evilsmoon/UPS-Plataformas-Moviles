@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="open()">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="new_register()">
+        <div *ngIf="!nuevo">
+          <ion-icon slot="icon-only" name="newspaper"></ion-icon>
+        </div>
+        <div *ngIf="nuevo">
+          <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+        </div>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="nuevo">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Producto</ion-label>
+        <ion-input [(ngModel)]="new_producto.nombre" type="text" placeholder="Ingrese el Producto"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Precio</ion-label>
+        <ion-input [(ngModel)]="new_producto.precio" type="number" placeholder="Ingrese el Precio"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descuento</ion-label>
+        <ion-input [(ngModel)]="new_producto.stock" type="number" placeholder="Ingrese el Descuento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Imagen</ion-label>
+        <ion-input (change)="uploadImage($event)"  type="file" placeholder="Ingrese el Descuento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-img [src]="new_producto.imagen"></ion-img>
+      </ion-item>
+      
+        <ion-item>
+          <ion-button (click)="modif==true?add():modificar(new_producto.id)" expand="block" fill="clear" shape="round">
+            <ion-icon *ngIf="modif" slot="icon-only" name="save-outline"></ion-icon>
+            <ion-icon *ngIf="!modif" slot="icon-only" name="reload-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      
+    </ion-list>
+  </div>
+  <div *ngIf="!nuevo">
+      <ion-list>
+        <ion-item *ngFor="let producto of productos">
+          <ion-label>{{producto.nombre}}</ion-label>
+          <ion-label>{{producto.precio}}</ion-label>
+          <ion-label>{{producto.stock}}</ion-label>
+          <ion-button (click)="new_producto=producto;nuevo=true;modif=false;">
+                     <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="eliminar(producto.id)">
+                      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </ion-list>
+  </div>
+</ion-content>

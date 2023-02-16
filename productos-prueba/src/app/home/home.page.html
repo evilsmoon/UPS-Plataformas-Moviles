@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar show-clear-button="always" color="light" placeholder="Buscar Productos" [debounce]="1000" (ionChange)="handleChange($event)"  ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    
+    <ion-item  *ngFor="let producto of results" >
+      <ion-thumbnail slot="start">
+        <img  [alt]="producto.nombre" class="img-card" [src]="producto.imagen" />
+      </ion-thumbnail>
+      <ion-label>
+        <h3>Nombre: {{producto.nombre}}</h3>
+        <p><b >Unidades</b>: {{producto.unidades}}</p>
+        <p><b>Precio</b>: ${{producto.precio}}</p>
+      </ion-label>
+      <ion-label slot="end" color="white">
+
+        <ion-button (click)="mostrarProducto(producto)">
+          <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="comprarProducto(producto)">
+          <ion-icon slot="icon-only" name="add"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item>
+    
+
+  </ion-list>
+</ion-content>
